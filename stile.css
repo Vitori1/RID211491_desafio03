@@ -1,0 +1,59 @@
+html{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: "Rubik", sans-serif;
+    background-color: #FFFFFF;
+}
+main{
+    justify-items: center;
+    margin: auto;
+    width: 21.5rem;
+}
+h1{
+    color: #11175E;
+}
+.input-tarefa{
+    color: #B1BACB;
+    height: 3rem;
+    width: 19.5rem;
+    margin-bottom: .8rem;
+    font-weight: 400;
+    font-size: 1rem;
+    border: hidden;
+    
+}
+button{
+    font-family: "Rubik", sans-serif;
+    background-color: #2D70FD;
+    color: #FFFFFF;
+    border: hidden;
+    border-radius: .2rem;
+    height: 3rem;
+    width: 20rem;
+}
+footer{
+    position: relative;
+    text-align: end;
+}
+.section-tarefas {
+    font-family: "Rubik", sans-serif;
+    & > div {
+        padding-inline-start: 0rem;
+    } 
+    & > div > div {
+        list-style-type: none;
+        padding: .8rem 1.2rem;
+        font-size: 1rem;
+        color: #001747;
+        font-weight: 500;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: .4rem;
+    }
+    & > div > div:last-child{
+        margin-bottom: 0;
+    }
+}
