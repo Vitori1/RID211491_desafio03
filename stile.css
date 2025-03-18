@@ -17,21 +17,21 @@ h1{
 .input-tarefa{
     color: #B1BACB;
     height: 3rem;
-    width: 19.5rem;
+    width: 20rem;
     margin-bottom: .8rem;
     font-weight: 400;
     font-size: 1rem;
     border: hidden;
     
 }
-button{
+#save-task{
     font-family: "Rubik", sans-serif;
     background-color: #2D70FD;
     color: #FFFFFF;
     border: hidden;
     border-radius: .2rem;
     height: 3rem;
-    width: 20rem;
+    width: 20.2rem;
 }
 footer{
     position: relative;
@@ -39,21 +39,17 @@ footer{
 }
 .section-tarefas {
     font-family: "Rubik", sans-serif;
-    & > div {
-        padding-inline-start: 0rem;
-    } 
-    & > div > div {
-        list-style-type: none;
-        padding: .8rem 1.2rem;
-        font-size: 1rem;
-        color: #001747;
-        font-weight: 500;
-        background-color: #FFFFFF;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: .4rem;
-    }
-    & > div > div:last-child{
+    padding-inline-start: 0rem;
+    margin: 0;
+    padding: .8rem 1.2rem;
+    font-size: 1rem;
+    color: #001747;
+    font-weight: 500;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .4rem;
+    & > div:last-child{
         margin-bottom: 0;
     }
 }

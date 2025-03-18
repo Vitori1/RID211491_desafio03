@@ -7,18 +7,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stile.css">
-    <script src="index.js"></script>
     <title>Board de tarefas</title>
 </head>
 <body>
     <main>
         <h1>Board de tarefas</h1>
         <section id="create-todo-section">
-            <form id="create-todo-form">
-                <input type="text" name="nome_da_tarefa" class="input-tarefa" aria-label="Nome da tarefa" placeholder="Nome da tarefa" id="nome-da-tarefa">
-                <input type="text" name="etiqueta" class="input-tarefa" aria-label="Etiqueta" placeholder="Etiqueta" id="etiqueta">
-                <button id="save-task" aria-label="Cadastrar tarefa" onclick="tarefa.Adicionar()">+</button>
-            </form>
+            <input type="text" name="nome_da_tarefa" class="input-tarefa" aria-label="Nome da tarefa" placeholder="Nome da tarefa" id="nome-da-tarefa">
+            <input type="text" name="etiqueta" class="input-tarefa" aria-label="Etiqueta" placeholder="Etiqueta" id="etiqueta">
+            <button id="save-task" aria-label="Cadastrar tarefa" onclick="tarefa.Adicionar()">+</button>
         </section>
         <section class="section-tarefas">
 
@@ -26,6 +23,6 @@
         <footer id="todo-footer">
         </footer>
     </main>
-    
+    <script src="index.js"></script>
 </body>
 </html>
