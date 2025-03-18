@@ -10,8 +10,13 @@ class Tarefa {
         this.arrayTarefas = [];
         this.tarefasConcluidas = []; // Array para armazenar tarefas concluídas
         this.sectionTarefas = document.querySelector(".section-tarefas");
-        this.concluidasSection = document.querySelector("todo-footer"); // Área para mostrar tarefas concluídas
+        this.concluidasSection = document.querySelector("#todo-footer"); // Área para mostrar tarefas concluídas
+        this.contadorTarefas = document.querySelector(".contador-tarefas"); // Área para mostrar número de tarefas concluídas
         this.date = `Criado em: ${this.formatarData()}`;
+        this.concluidasSection.innerHTML = "";
+        const contador = document.createElement("p");
+        contador.textContent = `${this.tarefasConcluidas.length} tarefa concluída`;
+        this.concluidasSection.appendChild(contador);
     }
 
     formatarData() {
@@ -114,15 +119,10 @@ class Tarefa {
     }
 
     AtualizarConcluidas() {
-        this.concluidasSection.innerHTML = "<h3>Tarefas Concluídas:</h3>";
-        for (let id of this.tarefasConcluidas) {
-            const tarefa = this.arrayTarefas.find(t => t.id === id);
-            if (tarefa) {
-                const nome = document.createElement("p");
-                nome.textContent = tarefa.nome_da_tarefa;
-                this.concluidasSection.appendChild(nome);
-            }
-        }
+        this.concluidasSection.innerHTML = "";
+        const contador = document.createElement("p");
+        contador.textContent = `${this.tarefasConcluidas.length} tarefa concluída`;
+        this.concluidasSection.appendChild(contador);
     }
 }
 
