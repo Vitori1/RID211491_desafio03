@@ -100,6 +100,7 @@ class Tarefa {
 
             if (nomeElement && botao) {
                 nomeElement.style.textDecoration = "line-through"; // Aplica o estilo de riscar
+                nomeElement.style.color = "#B1BACB";
 
                 // Substitui o botão por uma imagem
                 const imagem = document.createElement("img");
