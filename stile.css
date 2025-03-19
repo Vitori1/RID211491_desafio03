@@ -45,6 +45,7 @@ h1{
 }
 footer{
     justify-self: end;
+    color: #B1BACB;
 }
 .section-tarefas {
     font-family: "Inter", sans-serif;
@@ -86,5 +87,30 @@ footer{
             padding: .8rem 1.7rem;
             cursor: pointer;
         }
+    }
+}
+@media only screen and (min-width: 768px){
+    main{
+        background-color: #FFFFFF;
+        margin: auto;
+        width: 40.5rem;
+    }
+    h1{
+        position: relative;
+        text-align: left;
+        justify-items: start;
+    }
+    .input-tarefa{
+        width: 15.5rem;
+        margin-right: .8rem;
+    }
+    #save-task{
+        width: 3rem;
+        justify-items: center;
+    }
+    .section-tarefas{
+        margin-top: .5rem;
+        width: 32rem;
+
     }
 }
