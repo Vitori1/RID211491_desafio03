@@ -13,22 +13,27 @@ main{
     width: 21.5rem;
 }
 h1{
+    font-weight: 600;
+    font-size: 2rem;
     margin-top: 0;
     color: #11175E;
 }
 #create-todo-section{
-    margin: 0;
+    margin: auto;
+    justify-items: center;
 }
 .input-tarefa{
     color: #B1BACB;
     height: 3rem;
-    width: 100%;
+    width: 19.5rem;
+    margin: auto;
     margin-bottom: .8rem;
     font-weight: 400;
     font-size: 1rem;
     border: hidden;
     border: .1rem solid #B1BACB;
     border-radius: .5rem;
+    
     ::placeholder {
         padding-left: 1rem;
         color: #B1BACB;
@@ -42,18 +47,19 @@ h1{
     border: hidden;
     border-radius: .2rem;
     height: 3rem;
-    width: 100%;
+    width: 20rem;
     margin: 0;
     margin-bottom: .8rem;
     cursor: pointer;
 }
 footer{
+    margin-right: 1.5rem;
     justify-self: end;
     color: #B1BACB;
 }
 .section-tarefas {
     font-family: "Inter", sans-serif;
-    
+    margin: auto;
     & .tarefa-item{
         width: 15rem;
         padding-inline-start: 0rem;
@@ -75,8 +81,8 @@ footer{
             font-size: .8rem;
             border-radius: 1rem;
             margin: 0;
-            padding: 0.2rem .5rem;
-            width: 3.3rem;
+            width: fit-content;
+            padding: .2rem .5rem;
         }
         & .data{
             margin-top: .5rem;
@@ -99,29 +105,38 @@ footer{
 @media only screen and (min-width: 768px){
     main{
         background-color: #FFFFFF;
-        margin: auto;
+        padding: 1.5rem 2rem;
         width: 40.5rem;
+        margin: 0;
     }
     h1{
+        font-weight: 600;
+        font-size: 2.5rem;
         position: relative;
+        justify-self: start;
         text-align: left;
         justify-items: start;
     }
     .input-tarefa{
-        width: 15.5rem;
+        width: 16.5rem;
         margin-right: .8rem;
     }
     #save-task{
         width: 3rem;
-        justify-items: center;
+        justify-self: center;
     }
     .section-tarefas{
         margin-top: .5rem;
-        width: 32rem;
+        width: 35rem;
+        margin: 0;
+        margin: auto;
+        justify-items: center;
         
         & .tarefa-item{
             width: 100%;
-            display: inline-block;
+            display: flex;
+            justify-content: space-between;
+
 
             p{
                 display: inline-block;
@@ -131,5 +146,8 @@ footer{
                 justify-items: center;
             }
         }
+    }
+    footer{
+        margin: 0;
     }
 }
