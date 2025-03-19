@@ -1,9 +1,3 @@
-let tasks = [
-    { id: 1, nome_da_tarefa: "Implementar tela de listagem de tarefas", etiqueta: "frontend", checked: false},
-    { id: 2, nome_da_tarefa: "Criar endpoint para cadastro de tarefas", etiqueta: "backend", checked: false},
-    { id: 3, nome_da_tarefa: "Implementar protótipo da listagem de tarefas", etiqueta: "backend", checked: false}
-
-]
 class Tarefa {
     constructor() {
         this.id = 1;
