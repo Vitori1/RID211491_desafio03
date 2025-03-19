@@ -11,6 +11,7 @@ class Tarefa {
         const contador = document.createElement("p");
         contador.textContent = `${this.tarefasConcluidas.length} tarefa concluída`;
         this.concluidasSection.appendChild(contador);
+        this.AtualizarConcluidas();
     }
 
     formatarData() {
@@ -66,6 +67,9 @@ class Tarefa {
         for (let tarefa of this.arrayTarefas) {
             const row = document.createElement("div");
             row.setAttribute("id", tarefa.id);
+            row.classList.add("tarefa-item");
+
+            const contentDiv = document.createElement("div");
 
             let nome = document.createElement("h2");
             let etiqueta = document.createElement("p");
@@ -76,12 +80,13 @@ class Tarefa {
             nome.textContent = tarefa.nome_da_tarefa;
             etiqueta.textContent = tarefa.etiqueta;
             date.textContent = tarefa.date;
+            contentDiv.append(nome, etiqueta, date);
 
             let botao = document.createElement("button");
             botao.textContent = "Concluir";
             botao.setAttribute("onclick", `tarefa.Riscar(${tarefa.id})`);
 
-            row.append(nome, etiqueta, date, botao);
+            row.append(contentDiv, botao);
             this.sectionTarefas.appendChild(row);
         }
     }
