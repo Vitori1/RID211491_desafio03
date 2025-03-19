@@ -111,6 +111,8 @@ footer{
     .section-tarefas{
         margin-top: .5rem;
         width: 32rem;
-
+        & div{
+            width: 100%;
+        }
     }
 }
