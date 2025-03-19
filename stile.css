@@ -108,6 +108,8 @@ footer{
         padding: 1.5rem 2rem;
         width: 40.5rem;
         margin: 0;
+        justify-items: center;
+        margin: auto;
     }
     h1{
         font-weight: 600;
