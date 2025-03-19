@@ -16,10 +16,13 @@ h1{
     margin-top: 0;
     color: #11175E;
 }
+#create-todo-section{
+    margin: 0;
+}
 .input-tarefa{
     color: #B1BACB;
     height: 3rem;
-    width: 19.5rem;
+    width: 100%;
     margin-bottom: .8rem;
     font-weight: 400;
     font-size: 1rem;
@@ -39,7 +42,8 @@ h1{
     border: hidden;
     border-radius: .2rem;
     height: 3rem;
-    width: 20rem;
+    width: 100%;
+    margin: 0;
     margin-bottom: .8rem;
     cursor: pointer;
 }
@@ -50,13 +54,15 @@ footer{
 .section-tarefas {
     font-family: "Inter", sans-serif;
     
-    & div{
+    & .tarefa-item{
         width: 15rem;
         padding-inline-start: 0rem;
         border: .1rem solid #B1BACB;
         border-radius: .5rem;
         padding: 1.8rem 2.5rem;
         margin-bottom: .4rem;
+        align-items: center;
+        justify-items: center;
         & h2{
             margin-top: 0;
             font-weight: 500;
@@ -86,6 +92,7 @@ footer{
             font-size: 1.2rem;
             padding: .8rem 1.7rem;
             cursor: pointer;
+            
         }
     }
 }
@@ -111,8 +118,18 @@ footer{
     .section-tarefas{
         margin-top: .5rem;
         width: 32rem;
-        & div{
+        
+        & .tarefa-item{
             width: 100%;
+            display: inline-block;
+
+            p{
+                display: inline-block;
+                margin: 0 .4rem;
+            }
+            buttom{
+                justify-items: center;
+            }
         }
     }
 }
