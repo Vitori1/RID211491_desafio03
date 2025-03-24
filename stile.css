@@ -23,21 +23,21 @@ h1{
     justify-items: center;
 }
 .input-tarefa{
-    color: #B1BACB;
+    color: black;
     height: 3rem;
     width: 19.5rem;
     margin: auto;
+
     margin-bottom: .8rem;
-    font-weight: 400;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
     border: hidden;
     border: .1rem solid #B1BACB;
     border-radius: .5rem;
-    
-    ::placeholder {
-        padding-left: 1.5rem;
-        font-width: 500;
-        color: black;
+    ::placeholder{
+        padding-left: 1rem;
+        font-weight: 500;
+        font-size: 1.5rem;
     }
     
 }

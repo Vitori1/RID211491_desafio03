@@ -7,6 +7,7 @@ class Tarefa {
         this.concluidasSection = document.querySelector("#todo-footer"); // Área para mostrar tarefas concluídas
         this.contadorTarefas = document.querySelector(".contador-tarefas"); // Área para mostrar número de tarefas concluídas
         this.date = `Criado em: ${this.formatarData()}`;
+        this.concluir = false;
         this.concluidasSection.innerHTML = "";
         const contador = document.createElement("p");
         contador.textContent = `${this.tarefasConcluidas.length} tarefa concluída`;
@@ -38,6 +39,7 @@ class Tarefa {
             nome_da_tarefa: document.getElementById("nome-da-tarefa").value,
             etiqueta: document.getElementById("etiqueta").value,
             date: this.date,
+            concluir: this.concluir
         };
     }
 
@@ -64,56 +66,35 @@ class Tarefa {
 
     Listar() {
         this.sectionTarefas.innerHTML = "";
+    
         for (let tarefa of this.arrayTarefas) {
             const row = document.createElement("div");
             row.setAttribute("id", tarefa.id);
             row.classList.add("tarefa-item");
-
+    
             const contentDiv = document.createElement("div");
-
+    
             let nome = document.createElement("h2");
             let etiqueta = document.createElement("p");
             let date = document.createElement("p");
             etiqueta.className = "etiqueta";
             date.className = "data";
-
+    
             nome.textContent = tarefa.nome_da_tarefa;
             etiqueta.textContent = tarefa.etiqueta;
             date.textContent = tarefa.date;
             contentDiv.append(nome, etiqueta, date);
-
+    
             let botao = document.createElement("button");
             botao.textContent = "Concluir";
             botao.setAttribute("onclick", `tarefa.Riscar(${tarefa.id})`);
-
+    
             row.append(contentDiv, botao);
             this.sectionTarefas.appendChild(row);
-        }
-    }
-
-    Riscar(id) {
-        const tarefaElement = document.getElementById(id); // Encontra o elemento da tarefa pelo ID
-        if (tarefaElement) {
-            const nomeElement = tarefaElement.querySelector("h2"); // Localiza o <h2> dentro da tarefa
-            const botao = tarefaElement.querySelector("button"); // Localiza o botão dentro da tarefa
-
-            if (nomeElement && botao) {
-                nomeElement.style.textDecoration = "line-through"; // Aplica o estilo de riscar
-                nomeElement.style.color = "#8F98A8";
-
-                // Substitui o botão por uma imagem
-                const imagem = document.createElement("img");
-                imagem.src = "checked.png"; // Substitua pelo caminho correto da sua imagem
-                imagem.alt = "Concluído";
-                imagem.style.width = "30px"; // Ajusta o tamanho da imagem
-                imagem.style.height = "30px";
-                botao.replaceWith(imagem); // Substitui o botão pela imagem
-
-                // Adiciona o ID ao array de tarefas concluídas
-                if (!this.tarefasConcluidas.includes(id)) {
-                    this.tarefasConcluidas.push(id);
-                    this.AtualizarConcluidas();
-                }
+    
+            // Verifica se a tarefa está concluída e aplica o estilo
+            if (this.tarefasConcluidas.includes(tarefa.id)) {
+                this.AtualizarEstiloConcluido(nome, botao);
             }
         }
     }
@@ -121,9 +102,42 @@ class Tarefa {
     AtualizarConcluidas() {
         this.concluidasSection.innerHTML = "";
         const contador = document.createElement("p");
-        contador.textContent = `${this.tarefasConcluidas.length} tarefa concluída`;
+        contador.textContent = `${this.tarefasConcluidas.length} tarefa${this.tarefasConcluidas.length > 1 ? 's' : ''} concluída${this.tarefasConcluidas.length > 1 ? 's' : ''}`;
         this.concluidasSection.appendChild(contador);
     }
+    
+    Riscar(id) {
+        const tarefaElement = document.getElementById(id);
+        if (tarefaElement) {
+            const nomeElement = tarefaElement.querySelector("h2");
+            const botao = tarefaElement.querySelector("button");
+    
+            if (nomeElement && botao) {
+                this.AtualizarEstiloConcluido(nomeElement, botao);
+    
+                if (!this.tarefasConcluidas.includes(id)) {
+                    this.tarefasConcluidas.push(id);
+                    this.AtualizarConcluidas();
+                }
+            }
+        }
+    }
+    
+    AtualizarEstiloConcluido(nomeElement, botao) {
+        nomeElement.style.textDecoration = "line-through";
+        nomeElement.style.color = "#8F98A8";
+    
+        const imagem = document.createElement("img");
+        imagem.src = "checked.png";
+        imagem.alt = "Concluído";
+        imagem.style.width = "30px";
+        imagem.style.height = "30px";
+        botao.replaceWith(imagem);
+    }
+    
 }
 
 var tarefa = new Tarefa();
+
+
+
